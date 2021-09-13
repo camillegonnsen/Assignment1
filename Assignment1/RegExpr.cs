@@ -42,7 +42,7 @@ namespace Assignment1
             foreach (Match match in matches)
             {
                 if(match.Success){
-                    yield return match.Groups[1].Value;
+                    yield return Regex.Replace(match.Groups[1].Value, @"<[^>]*>", "");
                 }
             }
         }
